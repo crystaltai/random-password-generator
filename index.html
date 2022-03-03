@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Password Generator</title>
     <!-- To utilize Readex Pro font -->
+    <!-- pre-fetches the URLs and make them ready [ TODO: READ ABOUT PRECONNECT ]-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- [ TODO: READ ABOUT DISPLAY SWAP / CDN ] -->
     <link
       href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap"
       rel="stylesheet"
     />
     <!-- CSS and JS -->
-    <link rel="stylesheet" href="styles.css" />
+    <!-- [TODO: read into type] -->
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <!-- TODO: note down to talk about cache -->
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -25,17 +29,17 @@
         <div class="resultsContainer">
           <span id="result"></span>
         </div>
-
+        <!-- TODO: for inputs, develop habit of giving them a name (important for submitting forms, cause it doesn't use id's and instead uses's names) -->
         <!-- Criteria -->
         <div class="options">
           <!-- Criteria - Password Length -->
           <div class="option">
-            <label>Password Length</label>
+            <label for="length">Password Length</label>
             <input type="number" id="length" min="8" max="128" placeholder="" />
           </div>
           <!-- Criteria - Include Uppercase -->
           <div class="option">
-            <label>Include Uppercase</label>
+            <label for="checkbox">Include Uppercase</label>
             <input class="checkbox" type="checkbox" id="uppercase" />
           </div>
           <!-- Criteria - Include Numbers -->

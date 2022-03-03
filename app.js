@@ -8,6 +8,7 @@ const generatebtn = document.getElementById('generate');
 const form = document.getElementById('passwordForm');
 
 // Generate character codes by grabbing their ASCII numbers
+// [TODO: magic number = number with no association; hardcoded inputs - UPDATE THIS]
 const UPPERCASE_CODES = rangeOfAsciiCodes(65, 90);
 const LOWERCASE_CODES = rangeOfAsciiCodes(97, 122);
 const NUMBER_CODES = rangeOfAsciiCodes(48, 57);
