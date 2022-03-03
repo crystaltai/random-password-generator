@@ -8,14 +8,38 @@ const generatebtn = document.getElementById('generate');
 const form = document.getElementById('passwordForm');
 
 // Generate character codes by grabbing their ASCII numbers
-// [TODO: magic number = number with no association; hardcoded inputs - UPDATE THIS]
-const UPPERCASE_CODES = rangeOfAsciiCodes(65, 90);
-const LOWERCASE_CODES = rangeOfAsciiCodes(97, 122);
-const NUMBER_CODES = rangeOfAsciiCodes(48, 57);
-const SYMBOL_CODES = rangeOfAsciiCodes(33, 47)
-  .concat(rangeOfAsciiCodes(58, 64))
-  .concat(rangeOfAsciiCodes(91, 96))
-  .concat(rangeOfAsciiCodes(123, 126));
+// best practice: avoid using hardcoded magic numbers / strings that have no clear association
+const ascii = {
+  // Uppercase -- A - Z
+  A: 65,
+  Z: 90,
+  // Lowercase -- a - z
+  a: 97,
+  z: 122,
+  // Numbers -- 0 - 9
+  zero: 48,
+  nine: 57,
+  // Symbols -- ! - /
+  sym33: 33,
+  sym47: 47,
+  // Symbols -- : - @
+  sym58: 58,
+  sym64: 64,
+  // Symbols -- [ - `
+  sym91: 91,
+  sym96: 96,
+  // Symbols -- { - -
+  sym123: 123,
+  sym126: 126,
+};
+
+const UPPERCASE_CODES = rangeOfAsciiCodes(ascii.A, ascii.Z);
+const LOWERCASE_CODES = rangeOfAsciiCodes(ascii.a, ascii.z);
+const NUMBER_CODES = rangeOfAsciiCodes(ascii.zero, ascii.nine);
+const SYMBOL_CODES = rangeOfAsciiCodes(ascii.sym33, ascii.sym47)
+  .concat(rangeOfAsciiCodes(ascii.sym58, ascii.ascii64))
+  .concat(rangeOfAsciiCodes(ascii.sym91, ascii.sym96))
+  .concat(rangeOfAsciiCodes(ascii.sym123, ascii.sym126));
 
 // Add the respective ASCII numbers to uppercase, lowercase, number and symbol arrays
 function rangeOfAsciiCodes(low, high) {
@@ -70,6 +94,7 @@ function submitForm(event) {
   const includeNumbers = numbersDOM.checked;
   const includeSymbols = symbolsDOM.checked;
 
+  // Run generatePassword formula and return the results into password
   const password = generatePassword(
     characterAmount,
     includeUppercase,
@@ -77,5 +102,6 @@ function submitForm(event) {
     includeSymbols
   );
 
+  // Replace the innerText of result with the new password
   resultDOM.innerText = password;
 }

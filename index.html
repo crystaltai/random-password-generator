@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Password Generator</title>
     <!-- To utilize Readex Pro font -->
-    <!-- pre-fetches the URLs and make them ready [ TODO: READ ABOUT PRECONNECT ]-->
+    <!-- the preconnect hints to browsers that user is likely to need resources from the target resource's origin, so pre-emptively initiates a connection to the origin-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- [ TODO: READ ABOUT DISPLAY SWAP / CDN ] -->
+    <!-- swap gives the font face a zero second block period and inifinate swap period -->
+    <!-- this means browser draws text immediately with a fallback if the font face isn't loaded, but swaps the font face in as soon as it loads -->
     <link
       href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap"
       rel="stylesheet"
     />
     <!-- CSS and JS -->
-    <!-- [TODO: read into type] -->
+    <!-- best practice to include type="text/css" ; the attribute specifies the media type of the linked document/resource -->
     <link rel="stylesheet" href="styles.css" type="text/css" />
-    <!-- TODO: note down to talk about cache -->
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -29,28 +29,29 @@
         <div class="resultsContainer">
           <span id="result"></span>
         </div>
-        <!-- TODO: for inputs, develop habit of giving them a name (important for submitting forms, cause it doesn't use id's and instead uses's names) -->
         <!-- Criteria -->
         <div class="options">
           <!-- Criteria - Password Length -->
+          <!-- best practice: for inputs, develop habit of giving them a name (important for submitting forms, cause it doesn't use id's and instead uses's names) -->
+          <!-- best practice: for labels, add the for attribute to link it to to its respective input for accessibility best practices -->
           <div class="option">
             <label for="length">Password Length</label>
-            <input type="number" id="length" min="8" max="128" placeholder="" />
+            <input type="number" id="length" min="8" max="128" placeholder="" name="length" />
           </div>
           <!-- Criteria - Include Uppercase -->
           <div class="option">
-            <label for="checkbox">Include Uppercase</label>
-            <input class="checkbox" type="checkbox" id="uppercase" />
+            <label for="uppercase">Include Uppercase</label>
+            <input class="checkbox" type="checkbox" id="uppercase" name="uppercase" />
           </div>
           <!-- Criteria - Include Numbers -->
           <div class="option">
-            <label>Include Numbers</label>
-            <input class="checkbox" type="checkbox" id="numbers" />
+            <label for="numbers">Include Numbers</label>
+            <input class="checkbox" type="checkbox" id="numbers" name="numbers" />
           </div>
           <!-- Criteria - Include Symbols -->
           <div class="option">
-            <label>Include Symbols</label>
-            <input class="checkbox" type="checkbox" id="symbols" />
+            <label for="symbols">Include Symbols</label>
+            <input class="checkbox" type="checkbox" id="symbols" name="symbols" />
           </div>
           <div class="submit">
             <button class="generateBtn" id="generate" type="submit">Generate Password</button>
