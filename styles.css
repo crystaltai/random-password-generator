@@ -1,0 +1,125 @@
+body {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Readex Pro', 'Times New Roman', Times, serif;
+  background-color: #f9f9f9;
+}
+
+.container {
+  padding: 40px 30px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  width: 350px;
+  background-color: white;
+  filter: brightness(99%);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  margin-top: 0px;
+}
+
+.resultsContainer {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f2f6;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.resultsContainer #result {
+  overflow-wrap: break-word;
+  max-width: calc(100% - 40px);
+  padding: 5px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+}
+
+label {
+}
+
+#length {
+  width: 40px;
+  padding: 5px;
+  text-align: right;
+  font-family: 'Readex Pro', 'Times New Roman', Times, serif;
+  border: 1px solid #ced6e0;
+}
+
+/* removes default blue outline highlight when clicking into the text field */
+#length:focus {
+  outline: none;
+}
+
+/* removes arrows in the number field input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f1f2f6;
+  /* border: 1px solid #ced6e0; */
+  border-radius: 2px;
+}
+
+input[type='checkbox']:checked {
+  border-radius: 2px;
+  background-color: #17a2b8;
+  background: #17a2b8
+    url('data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==')
+    4px 4px no-repeat;
+}
+
+.submit {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#generate {
+  cursor: pointer;
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  font-family: 'Readex Pro', 'Times New Roman', Times, serif;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#generate:hover {
+  filter: brightness(95%);
+}
+
+#generate:active {
+  filter: brightness(90%);
+}
